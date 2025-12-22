@@ -7,7 +7,7 @@ function LoginImage() {
       alt="Image"
       width={600}
       height={600}
-      className="lg:w-[45%] md:w-[60%] sm:w-[70%] w-[85%] sm:mx-0 mx-auto"
+      className="lg:w-[45%] md:w-[60%] sm:w-[70%] w-[85%] sm:mx-0 mx-auto login-image"
     />
   );
 }

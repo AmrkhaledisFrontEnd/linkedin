@@ -3,7 +3,7 @@ import Image from "next/image";
 function ButtonAuthO() {
   return (
     <div className="flex items-center lg:flex-col md:flex-row flex-col gap-3">
-      <button className="flex sm:text-[15px] text-[14px] items-center justify-center gap-3 border border-black py-1.5 sm:w-87.5 w-75 rounded-full cursor-pointer">
+      <button className="flex sm:text-[15px] text-[14px] items-center justify-center gap-3 border border-black py-1.5 sm:w-87.5 w-75 rounded-full cursor-pointer bg-gray-50 hover:bg-gray-100">
         <Image
           src={"/google.svg"}
           alt="Google Logo"
@@ -13,7 +13,7 @@ function ButtonAuthO() {
         />
         Sign in with Google
       </button>
-      <button className="flex sm:text-[15px] text-[14px] items-center justify-center gap-3 border border-black py-1 sm:w-87.5 w-75 rounded-full cursor-pointer">
+      <button className="flex sm:text-[15px] text-[14px] items-center justify-center gap-3 border border-black py-1 sm:w-87.5 w-75 rounded-full cursor-pointer bg-gray-50 hover:bg-gray-100">
         <Image
           src={"/github.png"}
           alt="Google Logo"
