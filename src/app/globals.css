@@ -2,7 +2,8 @@
 /* ======================================================================== */
 @theme {
   --color-primary: #0a66c2;
-  --color-blackLight:#62748e;
+  --color-blackLight: #62748e;
+  --color-hoverColor: #004182;
 }
 @layer utilities {
   .container-css {
@@ -10,10 +11,9 @@
   }
 }
 
-
 /* H1 in Login Page*/
-@media(max-width:385px){
-  .login-h1{
+@media (max-width: 385px) {
+  .login-h1 {
     font-size: 22px;
     font-weight: 600;
   }

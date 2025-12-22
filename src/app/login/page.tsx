@@ -1,9 +1,10 @@
-import ButtonAuthO from "./_components/ButtonAuthO";
+import Link from "next/link";
 import LoginImage from "./_components/LoginImage";
+import ButtonAuthO from "@/components/ButtonAuthO/ButtonAuthO";
 // ==================================================================
 function LoginPage() {
   return (
-    <main className="min-h-[95dvh] flex items-center justify-center sm:pt-40 pt-37">
+    <main className="min-h-[97dvh] flex items-center justify-center sm:pt-40 pt-37">
       <div className="container-css">
         <div className="flex items-center lg:justify-between justify-center w-full lg:gap-5 gap-8 lg:flex-row flex-col">
           <div className="flex flex-col gap-10 lg:w-[50%] md:w-full lg:items-start items-center lg:text-start text-center">
@@ -12,12 +13,21 @@ function LoginPage() {
                 Welcome to your <span>professional community</span>
               </h1>
               <p className="text-blackLight sm:text-[15px] text-[14px] lg:px-0 sm:px-15">
-                LinkedIn is a professional platform that lets you showcase your
+                Linkedin is a professional platform that lets you showcase your
                 skills and experience, connect with professionals, and explore
                 job opportunities and growth in your field easily.
               </p>
             </div>
             <ButtonAuthO />
+            <Link
+              href={"/credential-login"}
+              className="flex sm:text-[15px] bg-hoverColor text-[14px] shadow text-white items-center justify-center gap-3  py-3 sm:w-87.5 w-75 rounded-full cursor-pointe hover:bg-primary"
+            >
+              Sign in with Email
+            </Link>
+            <p className="text-blackLight lg:text-center lg:w-1/2 ">
+              New to Linkedin? <Link className="font-semibold text-primary underline" href={"/register"}>Join now</Link>
+            </p>
           </div>
           <LoginImage />
         </div>

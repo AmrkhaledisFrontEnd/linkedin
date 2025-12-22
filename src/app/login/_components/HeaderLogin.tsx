@@ -4,7 +4,7 @@ import Navlinks from "./Navlinks";
 // =====================================================================
 function HeaderLogin() {
   return (
-    <header className="fixed top-0 w-full py-6 bg-gray-50">
+    <header className="fixed top-0 w-full sm:py-6 py-3 bg-gray-50">
       <h2 className="md:text-[14px] sm:text-[12px] text-[10px] text-center text-primary mb-7 sm:font-semibold font-bold">
         Download Linkedin on Google Play{" "}
         <Link
@@ -26,7 +26,7 @@ function HeaderLogin() {
                 alt="Linkedin Image"
                 width={200}
                 height={200}
-                className="sm:w-35 w-30"
+                className="sm:w-35 w-26"
               />
             </Link>
             <Navlinks />

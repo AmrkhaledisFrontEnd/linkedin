@@ -8,14 +8,13 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Linkedin",
+  title: "LinkedIn: Professional Networking & Careers",
   description:
     "LinkedIn is a professional social networking platform. It helps people connect with professionals, find jobs, build their careers, and share work experience and skills.",
-  icons:{
-    icon:"/linkedin.png"
-  }
+  icons: {
+    icon: "/linkedin.png",
+  },
 };
-
 export default function RootLayout({
   children,
 }: Readonly<{
