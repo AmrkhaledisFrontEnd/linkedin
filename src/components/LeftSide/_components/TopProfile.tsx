@@ -14,7 +14,7 @@ async function TopProfile() {
         {/* Images */}
         <div className="relative">
           <Image
-            src={user.imageProfile ?? "/card-bg.svg"}
+            src={user.imageProfile ? user.imageProfile : "/card-bg.svg"}
             alt="Your Profile image"
             width={200}
             height={200}
@@ -22,7 +22,7 @@ async function TopProfile() {
           />
           <div className="absolute -bottom-9 left-3 object-cover">
             <Image
-              src={user.image ?? "/photo.svg"}
+              src={user.image ? user.image : "/user.svg"}
               alt="Your Photo"
               width={100}
               height={100}

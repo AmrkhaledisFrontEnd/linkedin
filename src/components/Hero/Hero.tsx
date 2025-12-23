@@ -1,6 +1,8 @@
+import { GetUser } from "@/lib/GetUser";
 import Image from "next/image";
+import { redirect } from "next/navigation";
 // ======================================================
-function Hero() {
+async function Hero() {
   const actions = [
     { id: crypto.randomUUID(), nameAction: "Photo", icon: "/photo-icon.svg" },
     { id: crypto.randomUUID(), nameAction: "Video", icon: "/video-icon.svg" },
@@ -11,22 +13,22 @@ function Hero() {
       icon: "/article-icon.svg",
     },
   ];
+  const user = await GetUser();
+  if (!user) redirect("/login");
   return (
     <main className="flex-1 ">
-      <div className="w-full p-5 border-2 border-gray-100 rounded-2xl flex flex-col gap-8 bg-white">
+      <div className="w-full p-5 border-2 border-gray-100 rounded-2xl flex flex-col gap-3 bg-white">
         <div className="flex items-center gap-3 ">
           <Image
-            src={"/user.svg"}
+            src={user.image ? user.image : "/user.svg"}
             alt="Your Photo"
             width={100}
             height={100}
-            className="w-12.5 h-12.5 rounded-full"
+            className="w-12.5 h-12.5 rounded-full border-2 border-gray-200"
           />
-          <input
-            className="border border-gray-300 rounded-full py-3 px-4 w-full"
-            type="text"
-            placeholder="Start a post"
-          />
+          <button className="border border-gray-300 rounded-full py-3 px-4 w-full cursor-pointer text-start text-blackLight hover:bg-gray-100 transition-css">
+            Start a post
+          </button>
         </div>
         <ul className="flex items-center justify-between w-full">
           {actions.map((action) => (
