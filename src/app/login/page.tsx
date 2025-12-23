@@ -5,7 +5,7 @@ import ButtonAuthO from "@/components/ButtonAuthO/ButtonAuthO";
 function LoginPage() {
   return (
     <main className="min-h-[97dvh] flex items-center justify-center sm:pt-40 pt-37">
-      <div className="container-css">
+      <div className="container-css p-3">
         <div className="flex items-center lg:justify-between justify-center w-full lg:gap-5 gap-8 lg:flex-row flex-col">
           <div className="flex flex-col gap-10 lg:w-[50%] md:w-full lg:items-start items-center lg:text-start text-center">
             <div className="space-y-5">

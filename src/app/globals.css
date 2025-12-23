@@ -7,10 +7,13 @@
 }
 @layer utilities {
   .container-css {
-    @apply max-w-370 mx-auto ;
+    @apply max-w-350 mx-auto ;
   };
-  .tranistion-css{
+  .transition-css{
     @apply transition duration-300
+  };
+  .space-section{
+    @apply pt-18
   }
 }
 

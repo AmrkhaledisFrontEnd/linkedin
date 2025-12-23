@@ -52,6 +52,11 @@ model User {
   emailVerified DateTime? @map("email_verified")
   image         String?
   role          Role      @default(USER)
+  headline      String?
+  country       String?
+  city          String?
+  school        String?
+  imageProfile  String?
   accounts      Account[]
   sessions      Session[]
 

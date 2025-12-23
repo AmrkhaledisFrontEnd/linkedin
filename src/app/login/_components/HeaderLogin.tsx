@@ -5,7 +5,7 @@ import Navlinks from "./Navlinks";
 function HeaderLogin() {
   return (
     <header className="fixed top-0 w-full sm:py-6 py-3 bg-gray-50">
-      <h2 className="md:text-[14px] sm:text-[12px] text-[10px] text-center text-primary mb-7 sm:font-semibold font-bold">
+      <h2 className="md:text-[14px] sm:text-[12px] sm:block hidden text-center text-primary mb-7 sm:font-semibold font-bold">
         Download Linkedin on Google Play{" "}
         <Link
           className="py-2 px-6 rounded-full bg-primary text-white ml-3 md:text-[12px] sm:text-[11px] text-[9px]"
@@ -18,7 +18,7 @@ function HeaderLogin() {
         </Link>
       </h2>
       <div>
-        <div className="container-css">
+        <div className="container-css p-3">
           <nav className="flex items-center justify-between">
             <Link href={"/"}>
               <Image

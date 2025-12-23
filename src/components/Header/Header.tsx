@@ -3,11 +3,13 @@ import Link from "next/link";
 import InputSearch from "./_components/InputSearch";
 import Navlinks from "./_components/Navlinks";
 import Me from "./_components/Me";
+import { GetUser } from "@/lib/GetUser";
 // ======================================================================
-function Header() {
+async function Header() {
+  const user = await GetUser()
   return (
-    <header className="shadow w-full fixed top-0 lg:pb-0 pb-20 ">
-      <div className="container-css px-3 flex items-center justify-between h-17">
+    <header className="shadow w-full fixed top-0 lg:pb-0 pb-20 bg-white">
+      <div className="container-css px-3 flex items-center justify-between h-15">
         <div className="flex items-center gap-3">
           <Link href={"/linkedin"}>
             <Image
@@ -15,7 +17,7 @@ function Header() {
               alt="Linkedin logo"
               width={150}
               height={150}
-              className="md:w-12.5 w-11"
+              className="md:w-10 w-8"
             />
           </Link>
           <InputSearch />
@@ -23,7 +25,7 @@ function Header() {
         <div className="h-full flex items-center md:gap-10 gap-5 sm:flex-row flex-row-reverse">
           <Navlinks />
           <div className="h-full flex items-center gap-3">
-            <Me />
+            <Me user={user}/>
           </div>
         </div>
       </div>

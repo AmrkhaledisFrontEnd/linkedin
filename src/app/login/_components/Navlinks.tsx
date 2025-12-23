@@ -10,7 +10,7 @@ function Navlinks() {
         Welcome back
       </Link>
       <Link
-        className="bg-primary py-2  border-2 border-transparent px-6 rounded-full text-white sm:text-[18px] text-[14px] hover:bg-hoverColor"
+        className="bg-primary sm:py-2 py-1.5  border-2 border-transparent px-6 rounded-full text-white sm:text-[18px] text-[14px] hover:bg-hoverColor"
         href={"/register"}
       >
         Sign up
