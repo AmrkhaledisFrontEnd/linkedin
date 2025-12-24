@@ -32,7 +32,7 @@ async function Hero() {
         </div>
         <ul className="flex items-center justify-between w-full">
           {actions.map((action) => (
-            <button className="flex items-center gap-2 text-blackLight hover:bg-gray-100 rounded cursor-pointer py-2 px-4 transition-css">
+            <button key={action.id} className="flex items-center gap-2 text-blackLight hover:bg-gray-100 rounded cursor-pointer py-2 px-4 transition-css">
               <Image
                 src={action.icon}
                 alt={action.nameAction}

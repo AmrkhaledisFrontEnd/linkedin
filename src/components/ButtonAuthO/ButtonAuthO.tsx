@@ -11,8 +11,9 @@ function ButtonAuthO() {
   return (
     <div className="flex items-center lg:flex-col flex-col gap-3">
       <button
+        type="button"
         onClick={() => signinWithAuthO("google")}
-        className="flex sm:text-[15px] text-[14px] items-center justify-center gap-3 border border-black py-1.5 sm:w-87.5 w-75 rounded-full cursor-pointer bg-gray-50 hover:bg-gray-100"
+        className="flex sm:text-[15px] text-[14px] items-center justify-center gap-3 border border-blackLight py-1.5 sm:w-87.5 w-75 rounded-full cursor-pointer bg-gray-50 hover:bg-gray-100 text-slate-700"
       >
         <Image
           src={"/google.svg"}
@@ -24,8 +25,9 @@ function ButtonAuthO() {
         Sign in with Google
       </button>
       <button
+        type="button"
         onClick={() => signinWithAuthO("github")}
-        className="flex sm:text-[15px] text-[14px] items-center justify-center gap-3 border border-black py-1 sm:w-87.5 w-75 rounded-full cursor-pointer bg-gray-50 hover:bg-gray-100"
+        className="flex sm:text-[15px] text-[14px] items-center justify-center gap-3 border border-blackLight py-1 sm:w-87.5 w-75 rounded-full cursor-pointer bg-gray-50 hover:bg-gray-100 text-slate-700"
       >
         <Image
           src={"/github.png"}

@@ -6,7 +6,7 @@ import { FaSignOutAlt } from "react-icons/fa";
 function ButtonSIgnOut() {
   const router = useRouter();
   const handleClick = async () => {
-    signOut();
+    await signOut();
     router.refresh();
     redirect("/login");
   };
