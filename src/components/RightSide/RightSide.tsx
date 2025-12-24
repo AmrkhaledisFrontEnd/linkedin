@@ -6,7 +6,7 @@ import { FaArrowRightLong } from "react-icons/fa6";
 function RightSide() {
   return (
     <aside className="w-80 flex flex-col gap-2 ">
-      <div className="border-2 border-gray-100 rounded-2xl overflow-hidden p-3 flex flex-col gap-5 bg-white">
+      <div className="shadow rounded-2xl overflow-hidden p-3 flex flex-col gap-5 bg-white">
         <div className="flex items-center justify-between">
           <h2 className="text-blackLight">Add to your feed</h2>
           <Image
@@ -32,7 +32,7 @@ function RightSide() {
           </Link>
         </div>
       </div>
-      <div className="border-2 border-gray-100 rounded-2xl overflow-hidden p-3 bg-white">
+      <div className="shadow rounded-2xl overflow-hidden p-3 bg-white">
         <Image
           src={"/banner-image.jpg"}
           alt="Banner"

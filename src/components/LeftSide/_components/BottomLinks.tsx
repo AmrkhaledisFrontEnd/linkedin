@@ -32,7 +32,7 @@ function BottomLinks() {
     },
   ];
   return (
-    <div className="p-5 border-2 border-gray-100 rounded-2xl flex flex-col gap-4 bg-white">
+    <div className="p-5 shadow rounded-2xl flex flex-col gap-4 bg-white">
       {links.map((link) => (
         <Link
           className="flex items-center gap-2 text-[14px] hover:underline"

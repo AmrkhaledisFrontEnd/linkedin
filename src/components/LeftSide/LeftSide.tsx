@@ -7,7 +7,7 @@ function LeftSide() {
   return (
     <aside className="w-65 flex flex-col gap-2 ">
       <TopProfile />
-      <div className="p-5 border-2 border-gray-100 rounded-2xl bg-white">
+      <div className="p-5 shadow rounded-2xl bg-white">
         <Link
           href={"/"}
           className="group hover:underline flex items-center justify-between"

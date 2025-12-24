@@ -2,14 +2,12 @@ import { GetUser } from "@/lib/GetUser";
 import Image from "next/image";
 import Link from "next/link";
 import { redirect } from "next/navigation";
-import { FaGripVertical, FaColumns } from "react-icons/fa";
-
 // ===================================================
 async function TopProfile() {
   const user = await GetUser();
   if (!user) redirect("/login");
   return (
-    <div className="border-2 border-gray-100 rounded-2xl overflow-hidden bg-white">
+    <div className=" rounded-2xl overflow-hidden bg-white shadow">
       <Link href={"/linkedin/profile"} className="flex flex-col gap-10 pb-6">
         {/* Images */}
         <div className="relative">
@@ -32,13 +30,15 @@ async function TopProfile() {
         </div>
         {/* text */}
         <div className="px-3">
-          <h2 className="text-xl font-bold">
+          <h2 className="text-xl font-semibold line-clamp-1">
             {user.name.charAt(0).toUpperCase() +
               user.name.slice(1).toLocaleLowerCase()}
           </h2>
           <h3 className="text-[13px] line-clamp-2">{user.headline}</h3>
-          <h3 className="text-[13px] text-blackLight">{user.city}</h3>
-          <h3 className="text-[12px] ">{user.school}</h3>
+          <h3 className="text-[13px] text-blackLight line-clamp-1">
+            {user.city}
+          </h3>
+          <h3 className="text-[12px] line-clamp-1">{user.school}</h3>
         </div>
       </Link>
     </div>
