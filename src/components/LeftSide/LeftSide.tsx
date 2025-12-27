@@ -5,9 +5,9 @@ import TopProfile from "./_components/TopProfile";
 // ===========================================================
 function LeftSide() {
   return (
-    <aside className="w-65 flex flex-col gap-2 ">
+    <aside className="w-65 flex flex-col gap-2">
       <TopProfile />
-      <div className="p-5 shadow rounded-2xl bg-white">
+      <div className="p-5 shadow rounded bg-white">
         <Link
           href={"/"}
           className="group hover:underline flex items-center justify-between"

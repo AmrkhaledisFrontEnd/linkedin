@@ -5,6 +5,9 @@ import React, { useEffect, useState } from "react";
 import Icons from "./_components/Icons";
 import ButtonPost from "./_components/ButtonPost";
 import TopBoxPost from "./_components/TopBoxPost";
+import { CreatePostAction } from "@/lib/actions/CreatePostAction";
+import toast from "react-hot-toast";
+import { MdDelete } from "react-icons/md";
 // ======================================================
 function BoxPost({
   showBoxPost,
@@ -26,14 +29,32 @@ function BoxPost({
       removeEventListener("click", handleClick);
     };
   });
-  const [post, setPost] = useState("");
+  const [contentTxt, setContentTxt] = useState("");
   const [loading, setLoading] = useState(false);
-  const handleClick = () => {
-    if (post.trim().length < 1) return;
+  const [imagePost, setImagePost] = useState("");
+  const [imagePostFile, setImagePostFile] = useState<File | null>(null);
+  const handleClick = async () => {
+    if (contentTxt.trim().length < 1 && !imagePost) return;
+    setLoading(true);
+    const result = await CreatePostAction({
+      contentTxt,
+      postImage: imagePostFile,
+      userId: user.id,
+    });
+    setLoading(false);
+    if (result?.error)
+      return toast.error(result.error, {
+        className: "toast-font",
+      });
+    setContentTxt("");
+    setImagePostFile(null);
+    setImagePost("");
+    setShowBoxPost(false);
+    toast.success("Done Post");
   };
   return (
     <div
-      className={`w-full h-screen bg-black/20 backdrop-blur inset-0 flex items-center justify-center ${
+      className={`w-full h-screen bg-black/20 backdrop-blur inset-0 flex items-center justify-center z-30 ${
         showBoxPost ? "fixed" : "hidden"
       }`}
     >
@@ -56,14 +77,38 @@ function BoxPost({
             </div>
           </div>
           <textarea
-            onChange={(e) => setPost(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.key == "Enter") return handleClick();
+            }}
+            value={contentTxt}
+            onChange={(e) => setContentTxt(e.target.value)}
             rows={6}
             placeholder="what do you want to talk about?"
             className="border border-gray-100 rounded p-2 outline-none resize-none"
           />
+          {imagePost && (
+            <div className="relative div">
+              <Image
+                src={imagePost}
+                alt="Post Image"
+                width={500}
+                height={500}
+                className="w-full rounded object-cover max-h-100"
+              />
+              <button type="button" onClick={()=> setImagePost("")} className="absolute top-3 right-3 cursor-pointer text-red-500 text-xl p-2 rounded-full bg-white shadow hover:scale-105 transition-css"><MdDelete/></button>
+            </div>
+          )}
           <div className="flex items-center justify-between">
-            <Icons />
-            <ButtonPost handleClick={handleClick} post={post} />
+            <Icons
+              setImagePost={setImagePost}
+              setImagePostFile={setImagePostFile}
+            />
+            <ButtonPost
+              loading={loading}
+              handleClick={handleClick}
+              contentTxt={contentTxt}
+              imagePost={imagePost}
+            />
           </div>
         </div>
       </div>
